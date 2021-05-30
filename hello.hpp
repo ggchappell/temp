@@ -11,7 +11,7 @@ public:
 
     std::string hello()
     {
-        auto s = std::string("HELLO!!");
+        auto s = std::string("HELLO!!!");
         return s;
     }
 };
