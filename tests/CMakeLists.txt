@@ -4,6 +4,6 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
-add_executable(hello_test_suite hello_test_suite.cpp ../hello.hpp)
-target_compile_features(hello_test_suite PUBLIC cxx_std_11)
+add_executable(hello_test hello_test.cpp ../hello.hpp)
+target_compile_features(hello_test PUBLIC cxx_std_11)
 
