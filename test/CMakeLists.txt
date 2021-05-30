@@ -9,5 +9,5 @@ target_compile_features(hello_test PUBLIC cxx_std_11)
 # "check", which builds any test executables that are not up to date and
 # then runs all tests. (Alas, it isn't DRY.)
 add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND}
-                        DEPENDS tests/hello_test)
+                        DEPENDS hello_test)
 
