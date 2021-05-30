@@ -9,14 +9,8 @@ project(HelloThere DESCRIPTION "Hello there!"
 
 if(CMAKE_PROJECT_NAME STREQUAL HelloThere)
     include(CTest)
-endif()
-
-if(CMAKE_PROJECT_NAME STREQUAL HelloThere AND BUILD_TESTING)
     add_subdirectory(tests)
 endif()
-
-add_test(NAME AllTests
-         COMMAND hello_test)
 
 add_executable(hello_example examples/hello_example.cpp hello.hpp)
 target_compile_features(hello_example PUBLIC cxx_std_11)
