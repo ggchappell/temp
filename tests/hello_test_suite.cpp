@@ -1,4 +1,4 @@
-// hello_test.cpp
+// hello_test_suite.cpp
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../extern/doctest.h"

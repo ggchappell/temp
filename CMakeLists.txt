@@ -18,9 +18,6 @@ endif()
 add_test(NAME AllTests
          COMMAND hello_test_suite)
 
-add_executable(hello_test_suite tests/hello_test.cpp tests/doctest.h hello.hpp)
-target_compile_features(hello_test_suite PUBLIC cxx_std_11)
-
 add_executable(hello_example examples/hello_example.cpp hello.hpp)
 target_compile_features(hello_example PUBLIC cxx_std_11)
 
