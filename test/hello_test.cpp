@@ -1,9 +1,9 @@
 // hello_test.cpp
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "../extern/doctest.h"
+#include "doctest.h"
 
-#include "../hello.hpp"
+#include "hello.hpp"
 
 #include <string>
 using std::string;

@@ -1,6 +1,6 @@
 // hello_example.cpp
 
-#include "../hello.hpp"
+#include "hello.hpp"
 // For class Hello
 #include <iostream>
 using std::cout;

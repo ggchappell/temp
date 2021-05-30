@@ -8,7 +8,9 @@ endif()
 project(HelloThere DESCRIPTION "Hello there!"
                    LANGUAGES CXX)
 
-if(CMAKE_PROJECT_NAME STREQUAL HelloThere)
+# Do the things we do NOT want to do if this project is included by some
+# other project.
+if(${CMAKE_PROJECT_NAME} STREQUAL HelloThere)
     include(CTest)
     add_subdirectory(test)
 
