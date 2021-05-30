@@ -10,6 +10,8 @@ project(HelloThere DESCRIPTION "Hello there!"
 if(CMAKE_PROJECT_NAME STREQUAL HelloThere)
     include(CTest)
     add_subdirectory(tests)
+
+    add_subdirectory(examples)
 endif()
 
 add_executable(hello_example examples/hello_example.cpp hello.hpp)
