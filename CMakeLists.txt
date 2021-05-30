@@ -12,12 +12,15 @@ if(CMAKE_PROJECT_NAME STREQUAL HelloThere)
     add_subdirectory(tests)
 
     add_subdirectory(examples)
+
+    # The CMake built-in "test" target does not build any test
+    # executables. Therefore, as so many others have done, we make our
+    # own target "check", which builds any test executables that are not
+    # up to date and then runs all tests.
+    add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND}
+                            DEPENDS tests/hello_test)
+
+    add_custom_target(run_example COMMAND examples/hello_example
+                                  DEPENDS examples/hello_example)
+
 endif()
-
-# The CMake built-in "test" target does not build any test executables.
-# Therefore, as so many others have done, we make our own target
-# "check", which builds any test executables that are not up to date and
-# then runs all tests.
-add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND}
-                        DEPENDS tests/hello_test)
-
