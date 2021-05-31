@@ -1,12 +1,12 @@
-# Indicate CMake version. Code below follows the recommendation from:
-#   https://cliutils.gitlab.io/modern-cmake/
-cmake_minimum_required(VERSION 3.7...3.20)
-if(${CMAKE_VERSION} VERSION_LESS 3.12)
-    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
-endif()
+cmake_minimum_required(VERSION 3.16)
 
 project(HelloThere DESCRIPTION "Hello there!"
                    LANGUAGES CXX)
+
+# Do the things we want to do regardless of whether this project is
+# included in some other project.
+
+# (Nothing here)
 
 # Do the things we do NOT want to do if this project is included by some
 # other project.
