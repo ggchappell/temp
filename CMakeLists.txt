@@ -4,11 +4,11 @@ project(HelloThere DESCRIPTION "Hello there!"
                    VERSION 1.0
                    LANGUAGES CXX)
 
-# Set our C++ standard if not already set (hopefully to ours or higher)
+# Set our C++ standard
 
-if(NOT ${CMAKE_CXX_STANDARD})
-    set(CMAKE_CXX_STANDARD 98)
-endif()
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED on)
+set(CMAKE_CXX_EXTENSIONS off)
 
 # Do the things we do NOT want to do if this project is included by some
 # other project.
