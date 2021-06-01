@@ -5,11 +5,9 @@ add_test(NAME hello_test2
          COMMAND hello_test2)
 
 add_executable(hello_test hello_test.cpp ../hello.hpp)
-target_compile_features(hello_test PUBLIC cxx_std_11)
 target_include_directories(hello_test PRIVATE .. ../extern)
 
 add_executable(hello_test2 hello_test2.cpp ../hello.hpp)
-target_compile_features(hello_test2 PUBLIC cxx_std_11)
 target_include_directories(hello_test2 PRIVATE .. ../extern)
 
 # The CMake "test" target does not build any test executables. We
