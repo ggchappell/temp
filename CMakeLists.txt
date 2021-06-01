@@ -14,10 +14,11 @@ if(NOT DEFINED CMAKE_CXX_EXTENSIONS)
     set(CMAKE_CXX_EXTENSIONS off)
 endif()
 
-# Do the things we do NOT want to do if this project is included by some
-# other project.
+# BUILD
 
 if(${CMAKE_PROJECT_NAME} STREQUAL HelloThere)
+    # Things we do NOT want to build if this project is included by some
+    # other project
     include(CTest)
     if(${BUILD_TESTING})
         add_subdirectory(test)
@@ -26,8 +27,7 @@ if(${CMAKE_PROJECT_NAME} STREQUAL HelloThere)
     add_subdirectory(example)
 endif()
 
-# Do the things we want to do regardless of whether this project is
-# included in some other project.
+# INSTALL
 
 install(FILES hello.hpp
         DESTINATION include)
