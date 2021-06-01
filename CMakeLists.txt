@@ -12,7 +12,9 @@ project(HelloThere DESCRIPTION "Hello there!"
 # other project.
 if(${CMAKE_PROJECT_NAME} STREQUAL HelloThere)
     include(CTest)
-    add_subdirectory(test)
+    if(${BUILD_TESTING})
+        add_subdirectory(test)
+    endif()
 
     add_subdirectory(example)
 endif()
