@@ -4,11 +4,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # - uses: actions/checkout@v2
       - name: do-the-tests
         run: |
           mkdir build
           cmake -S . -B build
           cmake --build build --target check
-          echo "yo"
 
