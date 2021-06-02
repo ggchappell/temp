@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: do-the-tests
         run: |
-          mkdir build
-          cmake -S . -B build
-          cmake --build build --target check
+          mkdir build_TMP
+          cmake -S . -B build_TMP
+          cmake --build build_TMP --target check
 
