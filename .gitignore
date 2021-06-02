@@ -34,3 +34,6 @@
 # Subdirectories (GGC)
 /build*
 
+# Vim swap files (GGC)
+*.sw?
+
