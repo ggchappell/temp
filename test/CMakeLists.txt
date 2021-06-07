@@ -26,23 +26,29 @@ list(APPEND TEST_TARGETS hello_test2)
 add_executable(hello_test hello_test.cpp)
 target_include_directories(hello_test PRIVATE ..)
 target_link_libraries(hello_test PRIVATE doctest)
-set_target_properties(hello_test PROPERTIES
-                      CXX_STANDARD 11
-                      CXX_STANDARD_REQUIRED ON
-                      CXX_EXTENSIONS OFF)
+set_target_properties(
+    hello_test PROPERTIES
+        CXX_STANDARD 11
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF)
 
 add_executable(hello_test2 hello_test2.cpp)
 target_include_directories(hello_test2 PRIVATE ..)
 target_link_libraries(hello_test2 PRIVATE doctest)
-set_target_properties(hello_test2 PROPERTIES
-                      CXX_STANDARD 11
-                      CXX_STANDARD_REQUIRED ON
-                      CXX_EXTENSIONS OFF)
+set_target_properties(
+    hello_test2 PROPERTIES
+        CXX_STANDARD 11
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF)
 
 # The CMake "test" target does not build any test executables. We
 # therefore create our own target "check", which builds any test
 # executables that are not up to date and then runs all tests.
-add_custom_target(check COMMAND "${CMAKE_CTEST_COMMAND}"
-                        DEPENDS build_all_tests)
-add_custom_target(build_all_tests DEPENDS "${TEST_TARGETS}")
+add_custom_target(
+    check
+    COMMAND "${CMAKE_CTEST_COMMAND}"
+    DEPENDS build_all_tests)
+add_custom_target(
+    build_all_tests
+    DEPENDS "${TEST_TARGETS}")
 

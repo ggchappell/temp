@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(HelloThere
-        DESCRIPTION "Hello there!"
-        VERSION 1.0
-        LANGUAGES CXX)
+project(
+    HelloThere
+    DESCRIPTION "Hello there!"
+    VERSION 1.0
+    LANGUAGES CXX)
 
 # **********************************************************************
 # BUILD
