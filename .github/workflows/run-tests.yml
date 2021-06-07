@@ -1,4 +1,4 @@
-name: build  # This name is shown on the badge
+name: build  # This name is shown on the badge image
 on: [push]
 jobs:
   test:
