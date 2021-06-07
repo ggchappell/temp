@@ -8,7 +8,8 @@ message(STATUS "Fetching doctest package")
 FetchContent_MakeAvailable(DocTest)
 message(STATUS "Fetching doctest package - done")
 
-# Specify our tests
+# Specify our tests. Each test target is added to a list in variable
+# TEST_TARGETS.
 
 add_test(NAME hello_test
          COMMAND hello_test)
