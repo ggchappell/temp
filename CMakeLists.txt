@@ -16,7 +16,7 @@ endif()
 
 # BUILD
 
-if("${CMAKE_PROJECT_NAME}" STREQUAL HelloThere)
+if("${CMAKE_PROJECT_NAME}" STREQUAL "${PROJECT_NAME}")
     # Things we do NOT want to build if this project is included by some
     # other project
     include(CTest)
