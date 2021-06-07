@@ -10,10 +10,10 @@ project(HelloThere
 # **********************************************************************
 
 # Since this package consists of a single header, if this project is
-# included by some other project, then there is nothing to build.
+# included by another project, then there is nothing to build.
 
-# If this prois not being included by another project, then we build
-# unit tests and an example program.
+# If this project is NOT being included by another project, then we
+# build tests and an example program.
 if("${CMAKE_PROJECT_NAME}" STREQUAL "${PROJECT_NAME}")
     include(FetchContent)
     include(CTest)
