@@ -16,11 +16,11 @@ endif()
 
 # BUILD
 
-if(${CMAKE_PROJECT_NAME} STREQUAL HelloThere)
+if("${CMAKE_PROJECT_NAME}" STREQUAL HelloThere)
     # Things we do NOT want to build if this project is included by some
     # other project
     include(CTest)
-    if(${BUILD_TESTING})
+    if("${BUILD_TESTING}")
         add_subdirectory(test)
     endif()
 

@@ -16,7 +16,7 @@ target_include_directories(hello_test2 PRIVATE .. ../extern)
 # therefore create our own target "check", which builds any test
 # executables that are not up to date and then runs all tests.
 
-add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND}
+add_custom_target(check COMMAND "${CMAKE_CTEST_COMMAND}"
                         DEPENDS build_all_tests)
-add_custom_target(build_all_tests DEPENDS ${TEST_TARGETS})
+add_custom_target(build_all_tests DEPENDS "${TEST_TARGETS}")
 
