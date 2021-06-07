@@ -19,7 +19,9 @@ endif()
 if("${CMAKE_PROJECT_NAME}" STREQUAL "${PROJECT_NAME}")
     # Things we do NOT want to build if this project is included by some
     # other project
+    include(FetchContent)
     include(CTest)
+
     if("${BUILD_TESTING}")
         add_subdirectory(test)
     endif()
