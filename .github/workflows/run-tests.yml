@@ -1,4 +1,4 @@
-name: build
+name: build  # This name is shown on the badge
 on: [push]
 jobs:
   test:
@@ -7,7 +7,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: do-the-tests
         run: |
-          mkdir build_TMP
           cmake -S . -B build_TMP
           cmake --build build_TMP --target check
 
