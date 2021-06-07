@@ -19,15 +19,25 @@ add_test(NAME hello_test2
          COMMAND hello_test2)
 list(APPEND TEST_TARGETS hello_test2)
 
+# **********************************************************************
 # BUILD
+# **********************************************************************
 
 add_executable(hello_test hello_test.cpp)
 target_include_directories(hello_test PRIVATE ..)
 target_link_libraries(hello_test PRIVATE doctest)
+set_target_properties(hello_test PROPERTIES
+                      CXX_STANDARD 11
+                      CXX_STANDARD_REQUIRED ON
+                      CXX_EXTENSIONS OFF)
 
 add_executable(hello_test2 hello_test2.cpp)
 target_include_directories(hello_test2 PRIVATE ..)
 target_link_libraries(hello_test2 PRIVATE doctest)
+set_target_properties(hello_test2 PROPERTIES
+                      CXX_STANDARD 11
+                      CXX_STANDARD_REQUIRED ON
+                      CXX_EXTENSIONS OFF)
 
 # The CMake "test" target does not build any test executables. We
 # therefore create our own target "check", which builds any test

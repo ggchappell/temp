@@ -5,21 +5,16 @@ project(HelloThere
         VERSION 1.0
         LANGUAGES CXX)
 
-# Set our C++ standard, allowing for override
-
-if(NOT DEFINED CMAKE_CXX_STANDARD)
-    set(CMAKE_CXX_STANDARD 11)
-endif()
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if(NOT DEFINED CMAKE_CXX_EXTENSIONS)
-    set(CMAKE_CXX_EXTENSIONS OFF)
-endif()
-
+# **********************************************************************
 # BUILD
+# **********************************************************************
 
+# Since this package consists of a single header, if this project is
+# included by some other project, then there is nothing to build.
+
+# If this prois not being included by another project, then we build
+# unit tests and an example program.
 if("${CMAKE_PROJECT_NAME}" STREQUAL "${PROJECT_NAME}")
-    # Things we do NOT want to build if this project is included by some
-    # other project
     include(FetchContent)
     include(CTest)
 
@@ -30,7 +25,9 @@ if("${CMAKE_PROJECT_NAME}" STREQUAL "${PROJECT_NAME}")
     add_subdirectory(example)
 endif()
 
+# **********************************************************************
 # INSTALL
+# **********************************************************************
 
 install(FILES hello.hpp
         DESTINATION include)
