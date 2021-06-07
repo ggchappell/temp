@@ -1,4 +1,5 @@
-# Testing library
+# Get "doctest" testing package
+
 FetchContent_Declare(
     DocTest
     GIT_REPOSITORY "https://github.com/onqtam/doctest"
@@ -7,6 +8,8 @@ message(STATUS "Fetching doctest package")
 FetchContent_MakeAvailable(DocTest)
 message(STATUS "Fetching doctest package - done")
 
+# Specify our tests
+
 add_test(NAME hello_test
          COMMAND hello_test)
 list(APPEND TEST_TARGETS hello_test)
@@ -14,6 +17,8 @@ list(APPEND TEST_TARGETS hello_test)
 add_test(NAME hello_test2
          COMMAND hello_test2)
 list(APPEND TEST_TARGETS hello_test2)
+
+# BUILD
 
 add_executable(hello_test hello_test.cpp)
 target_include_directories(hello_test PRIVATE ..)
